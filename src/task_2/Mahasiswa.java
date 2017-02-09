@@ -43,10 +43,6 @@ public Mahasiswa (String NIM, String Nama){
         this.nilai = nilai;
     }
 
-    public void setI(int i) {
-        this.i = i;
-    }
-
     public String getNIM() {
         return NIM;
     }
@@ -59,32 +55,39 @@ public Mahasiswa (String NIM, String Nama){
         return status;
     }
 
-    public char[] getNilai() {
-        return nilai;
+    public char getNilai(int i) {
+        return nilai[i];
     }
 
-    public int getI() {
-        return i;
-    }
+    public void addNilai( char nilai){
+        this.nilai[i] =  nilai ;
+        i= i+1;           
+    }   
 
- public char getNilai (int i){
-     return nilai[i];
-}  
-
-public void addNilai( char nilai){
-    this.nilai[i] =  nilai ;
-    i= i+1;           
-}   
-
-public String toString(){
+    @Override
+    public String toString(){
+        return NIM+" " +Nama+" " +status+" = " +new String (nilai);
     
-}
-
-public char cekNilai(Mahasiswa m){
-    
-}
-
-public static void main(String[] args) {
-          
     }
-}
+
+    public char cekNilai(Mahasiswa m){
+        int p;
+        for (char q = 'A'; q <= 'E'; q++)
+        {
+            for (int r = 0; r < i; r++)
+            {
+                if (q == nilai[r])
+                {
+                    for (int s = 0; s<=i; s++)
+                    {
+                        if (q == m.nilai[s])
+                            return q;
+                    }
+                }
+            }
+        }
+    return nilai[i];
+        }
+    }
+
+
